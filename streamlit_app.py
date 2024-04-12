@@ -136,7 +136,7 @@ if question:
     response = chain.invoke({'question': question, 'chat_history': memory.load_memory_variables({})})
 
     st.chat_message('assistant').markdown(response.content)
-        st.session_state.messages.append(AIMessage(content=response.content))
+    st.session_state.messages.append(AIMessage(content=response.content))
 
     # Optionally save the response to the chat history for future reference
     chat_history.save({'question': question, 'answer': response.content})
